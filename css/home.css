@@ -1,0 +1,21 @@
+#songlist{
+    display: flex;
+    flex-wrap:wrap;
+    padding: 3px;
+}
+.item{
+    width: 33.33%;
+
+
+    position: relative;
+}
+.item>div{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+img.auto{/*图片自适应：一定要使用前景图*/
+    width: 100%;
+    height: auto;
+    max-width: 1000px;/*最大宽度设置：防止图片过大*/
+}

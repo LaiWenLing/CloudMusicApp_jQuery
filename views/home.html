@@ -1,0 +1,17 @@
+<img class="auto" src="images/banner1.jpg" alt=""><!--图片路径是以index的位置为准-->
+<div id="songlist">
+</div>
+
+<!--自定义模板，方便jquery调用-->
+<template style="display: none">
+    <div class="item" >
+        <!--传入参数?id=635498296会导致当前页面刷新，刷新以后仍停留在当前页面，为防止页面刷新，一定要加上#
+            一般#后面加上跳转页面的参数如/detail【锚点#传参！！！！】
+        -->
+        <a href="#/detail?id=635498296" onclick="route('detail')">
+            <img src="images/109951162865227946.jpg" alt="" class="auto">
+            <div></div>
+            <p></p>
+        </a>
+    </div>
+</template>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            /*for(var i=0;i<5;i++){
+                $("<li>hello"+i+"</li>").click(function(){
+                    alert(i);//点击li，i的值始终为5
+                }).appendTo($("ul"));
+            }*/
+
+            //方法1：将索引值保存到属性上，（同时index属性会保存在行内样式上）
+            for(var i=0;i<5;i++){
+                $("<li>hello"+i+"</li>").attr("index",i).click(function(){
+                    var i=$(this).attr("index");
+                    alert(i);
+                }).appendTo($("ul"));
+            }
+
+            //方法2：将索引值保存到对象上，不存在行内样式，更优雅
+            for(var i=0;i<5;i++){
+                $("<li>hello"+i+"</li>").data("index",i).click(function(){
+                    var i=$(this).data("index");
+                    alert(i);
+                }).appendTo($("ul"));
+            }
+
+            //方法3：jquery提供的方法，index()方法，根据提供的元素找到索引值
+            for(var i=0;i<5;i++){
+                $("<li>hello"+i+"</li>").click(function(){
+                    var i=$("li").index(this);
+                    alert(i);
+                }).appendTo($("ul"));
+            }
+
+            //方法4：闭包。。。
+
+        })
+
+    </script>
+</head>
+<body>
+<ul>
+
+</ul>
+</body>
+</html>
