@@ -1,8 +1,6 @@
 /**
- * Created by Lai on 2017/6/25.
+ * Created by Lai on 2017/6/28.
  */
-
-
 //自运行函数，避免变量污染
 (function(){
 
@@ -60,18 +58,18 @@
 
 
     getPlayLists(12,function(data){//匿名函数，名字没有意义，所以使用匿名函数
-        var songList = $("#songlist");
+        var songList = $("#musiclist");
 
-        var template = $('template').html();//因为html太长，所以写在home.html页面中，并且写成一个模板，display:none.
+        var template = $('.m_template').html();//因为html太长，所以写在home.html页面中，并且写成一个模板，display:none.
 
         //【json数据不能直接放进html，必须拼成html字符串才能放进去】
 
         for(var i=0;i<data.length;i++){
 
-           /* $(template)//链式编程，需要在每次查找之后加上end()结束
-                .find(".item div").html(data[i].playCount).end() //end()代表这次查找结束
-                .find(".item img").attr()
-                .appendTo(songList);*/
+            /* $(template)//链式编程，需要在每次查找之后加上end()结束
+             .find(".item div").html(data[i].playCount).end() //end()代表这次查找结束
+             .find(".item img").attr()
+             .appendTo(songList);*/
 
             var $template = $(template);
             $template.find("a").attr("href","#/detail?id="+data[i].id);
@@ -98,8 +96,4 @@
 
 
 })();
-
-
-
-
 

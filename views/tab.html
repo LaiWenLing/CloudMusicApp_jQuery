@@ -1,12 +1,32 @@
-<!--标题栏-->
-<div>时下流行</div>
-<div>歌单</div>
-<div>tab3</div>
-<div>tab4</div>
-<div class="tabcontainer">
-<!--    tab.html本身是一个模块:一级路由；
-    tab模块下有一个标题栏和一个容器（加载home.html);
-    tab2又是一个子模块：二级路由
-    tab3也是一个子模块：二级路由
-    tab4也是一个子模块：二级路由-->
+<div class="wrap">
+    <div class="fix">
+        <div class="header">
+            <a href="#"><img src="images/logo.png" alt=""></a>
+            <!--<a href="#"><i class="fa fa-bars"></i></a>
+            <div>
+                <a href="#" class="fa fa-music"><i></i></a>
+                <a href="#" class="fa fa-rebel"><i></i></a>
+                <a href="#" class="fa fa-user"><i></i></a>
+            </div>
+            <a href="#" class="fa fa-search"><i></i></a>-->
+        </div>
+        <!--标题栏-->
+        <div class="nav">
+            <div class="active" onclick='route("home",$(".tabcontainer"));'>个性推荐</div>
+            <div onclick='route("musicList",$(".tabcontainer"));'>歌单</div>
+            <div onclick='route("radioStation",$(".tabcontainer"));'>主播电台</div>
+            <div onclick='route("charts",$(".tabcontainer"));'>排行榜</div>
+        </div>
+    </div>
+
+
+
+
+    <div class="tabcontainer">
+        <!--    tab.html本身是一个模块:一级路由；
+            tab模块下有一个标题栏和一个容器（加载home.html);
+            tab2又是一个子模块：二级路由
+            tab3也是一个子模块：二级路由
+            tab4也是一个子模块：二级路由-->
+    </div>
 </div>

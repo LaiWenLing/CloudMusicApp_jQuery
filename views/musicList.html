@@ -1,0 +1,39 @@
+<div class="m_banner">
+    <a href="#"><img src="images/m_banner_03.jpg" alt=""></a>
+    <div class="con">
+        <div class="m_title">
+            <h3>精品歌单</h3>
+            <span>></span>
+        </div>
+        <p>不得了！这些英文歌的热评信息...</p>
+        <span>欢迎各位光临云村故事会~</span>
+    </div>
+</div>
+<div class="m_nav">
+    <a href="#" class="title">
+        <h3>全部歌单</h3>
+        <i>></i>
+    </a>
+    <ul class="menu">
+        <li><a href="#">华语</a></li>
+        <li><a href="#">民谣</a></li>
+        <li class="last"><a href="#">电子</a></li>
+    </ul>
+</div>
+
+<div id="musiclist">
+</div>
+
+<!--自定义模板，方便jquery调用-->
+<div style="display: none" class="m_template">
+    <div class="item" >
+        <!--传入参数?id=635498296会导致当前页面刷新，刷新以后仍停留在当前页面，为防止页面刷新，一定要加上#
+            一般#后面加上跳转页面的参数如/detail【锚点#传参！！！！】
+        -->
+        <a href="#/detail?id=635498296" onclick="route('detail')">
+            <img src="images/109951162865227946.jpg" alt="" class="auto">
+            <div class="icon"><i></i><span></span></div>
+            <p></p>
+        </a>
+    </div>
+</div>

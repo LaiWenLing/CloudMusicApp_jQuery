@@ -30,6 +30,7 @@
         for(var i=0;i<data.tracks.length;i++){
             var music = data.tracks[i];
             var $template = $(template);//必须要先创建一个对象
+            $template.find("span").html(i+1);
             $template.find(".music").html(music.name);
             $template.find(".artist").html(music.ar[0].name);
             $template.appendTo($musicList);
