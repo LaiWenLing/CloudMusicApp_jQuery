@@ -1,7 +1,16 @@
+.home_wrap{
+    display: flex;
+    width: 100vw;
+    flex-flow: column nowrap;
+    height: auto;
+    position: relative;
+}
+
 #songlist{
     display: flex;
     flex-wrap:wrap;
     justify-content: space-between;
+    height: 0;
 }
 
 #songlist .item{
@@ -10,15 +19,25 @@
 }
 #songlist .item .icon{
     position: absolute;
-    top: 0.62vh;
-    right:0.93vw;
+    width: 100%;
+    height: 10%;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    right:0;
+    text-align: right;
     color: #fff;
     font-size: 2.7vw;
     font-family: "Microsoft YaHei";
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+#songlist .item .icon span{
+    margin-right: 5%;
 }
 #songlist .item p{
     padding: 0.9vh 1.6vw 3.2vh 1.6vw;
-    font-size: 2vw;
+    font-size: 3vw;
     line-height: 2.5vh;
     color: #000;
     font-family: "SimHei";
@@ -30,9 +49,8 @@
     -webkit-line-clamp:2;
     -webkit-box-orient: vertical;
 
-
 }
-#songlist img.auto{/*图片自适应：一定要使用前景图*/
+img.auto{/*图片自适应：一定要使用前景图*/
     width: 100%;
     height: auto;
     /*最大宽度设置：防止图片过大*/
@@ -49,7 +67,7 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    font-size: 1vw;
+    font-size: 3vw;
 }
 .icons div:nth-child(2){
     margin-left: 14.833%;/*16.481%;*/
@@ -93,4 +111,48 @@
     color: #98999a;
 }
 
+/*----轮播图-----*/
+
+#home_banner{
+    width: 100vw;
+
+    height: auto;
+}
+
+#banner-pic a{
+    position: absolute;
+    top: 0;
+
+}
+.papa{
+    position: relative;
+    width: 100vw;
+}
+#banner-pic a img{
+    width: 100vw;
+    height: auto;
+}
+#banner-nav{
+    position: absolute;
+    z-index: 99999;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:6%;
+    color: #fff;
+}
+#banner-nav span{
+    display: inline-block;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    background: #919293;
+    margin-right: 1.5vw;
+}
+#banner-nav .normal{
+    background: #919293;
+}
+#banner-nav .current{
+    background: #d2453c;
+}
 /*----------------------------------------------*/
+

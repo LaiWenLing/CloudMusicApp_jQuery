@@ -1,1 +1,51 @@
-<h2>主播电台</h2>
+<div id="radio_wrap">
+    <!-- 图片集 -->
+    <div class="papa">
+        <img src="images/radio_banner02.jpg" alt="" id="home_banner">
+        <div id="banner-nav"><!-- 导航按钮 -->
+            <span class="current"></span>
+            <span></span>
+            <span ></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="banner-pic">
+
+        <a href="#"><img src="images/radio_banner02.jpg"></a>
+        <a href="#"><img src="images/radio_banner03.jpg"></a>
+        <a href="#"><img src="images/radio_banner04.jpg"></a>
+        <a href="#"><img src="images/radio_banner05.jpg"></a>
+    </div>
+
+
+
+    <ul class="radio_nav">
+        <li><a href="#">电台分类</a></li>
+        <li><a href="#" class="nav_last">电台排行</a></li>
+    </ul>
+    <div class="radio_title">
+        <span></span>
+        <h2>电台个性推荐</h2>
+    </div>
+    <div id="radioList">
+        <div id="loading">
+            <img src="images/5-121204193R0-50.gif" alt="">
+        </div>
+    </div>
+
+    <div  id="radio_template" style="display: none">
+        <div class="item" >
+            <!--传入参数?id=635498296会导致当前页面刷新，刷新以后仍停留在当前页面，为防止页面刷新，一定要加上#
+                一般#后面加上跳转页面的参数如/detail【锚点#传参！！！！】
+            -->
+            <a href="#/detail?id=635498296" onclick="route('detail')">
+                <img src="images/109951162865227946.jpg" alt="" class="auto">
+                <div class="icon"><i></i><span></span></div>
+                <p></p>
+            </a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

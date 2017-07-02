@@ -1,0 +1,62 @@
+#music_player{
+    display: flex;
+    width: 100vw;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 8vh;
+    background: rgba(255,255,255,1);
+}
+.music_info{
+    flex: 0 0 60vw;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 8vh;
+    align-items: center;
+}
+.music_info img{
+    height: 6vh;
+    width: auto;
+    margin: 0 2vw;
+}
+#player_info{
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 6vh;
+    align-content: flex-start;
+    justify-content: center;
+}
+#audio_name{
+    font-size: 3vw;
+    overflow: hidden;
+    height: 3vh;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    line-height: 3vh;
+    font-weight: bold;
+}
+#audio_author{
+    font-size: 2vw;
+    color: #98999a;
+    overflow: hidden;
+
+}
+#audio_icons{
+    display: flex;
+    flex: 0 0 40vw;
+    height: 8vh;
+    align-items: center;
+}
+
+#audio_icons a{
+    flex: 1;
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+#audio_icons a img{
+    width: 100%;
+    height: auto;
+}

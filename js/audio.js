@@ -9,11 +9,11 @@ var audioController = {
     play: function(music){
         console.log(music);
 
-        var audio_state=$("#audio_state");
-
+        var audio_author=$("#audio_author");
+        var player_pic =$("#player_pic");
         //http://musicapi.duapp.com/api.php?type=url&id=37092095
         //1.播放歌曲
-        audio_state.html("歌曲加载中");
+        /*audio_state.html("歌曲加载中");*/
 
         $.ajax({
             type:"get",
@@ -31,16 +31,36 @@ var audioController = {
                     audio.src = data.data[0].url;
                     audio.play();
 
-                    audio_state.html("歌曲成功");
-
+                   audio_author.html(music.ar[0].name);
+                    player_pic.attr('src',music.al.picUrl);
                 }
             }
         });
 
         //2.显示歌曲,这段代码不能写在success里面。因为ajax是异步请求，只有数据加载完之后才会显示歌曲名字。
         $("#audio_name").html(music.name);
-    }
+    },
+   playPause:function() { //播放/暂停方法
+       var audio = $("#audio")[0];
+        if(audio.paused){
+            audio.play();
+            $('.play_pause').find('img').attr('src','images/playbar_btn_play.png');
+        }else{
+            audio.pause();
+            $('.play_pause').find('img').attr('src','images/playbar_btn_pause.png');
+        }
+   }
 };
+
+    //跨页面播放音乐
+    $("#audio")[0].currentTime = localStorage.cTime;
+    audioController.play(JSON.parse(localStorage.music));
+
+    //点击播放/暂停按钮
+    $('.play_pause').on('click',function(){
+       audioController.playPause();
+    });
+
 
 /*//获取歌曲mps地址并且播放的方法,play方法要被其他页面调用，所以不能装进自运行函数
 function play(music){

@@ -62,21 +62,36 @@ function route(m,container){  //container是容器
 }
 //调用路由函数： //因为传递了dom元素，所以只有加载完成网页才能生效
 
+
+
+//轮播图效果--------------------------------------------------------------------
+
+
 $(function(){
+
 
     //cookie早期本地存储，不安全。
     //localSrorage本地储存,保存的值只能是字符串
     if(!localStorage.count)localStorage.count=0;
     localStorage.count++;
 
-    if(localStorage.count==1){
-        route('hello');
-    }else{
         route("tab");
-       route("audio",$("#global"));
-    }
+        route("audio",$("#global"));
+
     console.log(localStorage.count);
 
+    if (localStorage.pagecount)
+    {
+        localStorage.pagecount=Number(localStorage.pagecount) +1;
+
+    }
+    else
+    {
+        localStorage.pagecount=1;
+        $("#global").css({display:"none"});
+    }
+
+    console.log(localStorage.pagecount);
 
 });
 

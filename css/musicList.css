@@ -1,16 +1,16 @@
 .m_banner{
     display: flex;
     height: 15vh;
-    width: 100%;
+    width: 100;
     padding: 2vh 2.8vw 4vh 2.8vw;
     flex-wrap: nowrap;
     background: #514640;
     justify-content: flex-start;
 }
 .m_banner a{
-    flex: 0 0 30%;
+    flex: 0 0 25%;
     height: 100%;
-    /*margin-right: 2.8%;*/
+    margin-right: 3%;
 
 }
 .m_banner a>img{
@@ -66,7 +66,7 @@
     color: #303131;
     width: 26.66%;
     border: 1px solid #d0d2d2;
-    height: 50%;
+    height: 45%;
     border-radius: 10vw 10vw;
     font-size: 3.3vw;
     display: flex;
@@ -107,11 +107,21 @@
 }
 #musiclist .item .icon{
     position: absolute;
-    top: 0.62vh;
-    right:0.93vw;
+    width: 100%;
+    height: 10%;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    right:0;
+    text-align: right;
     color: #fff;
     font-size: 2.7vw;
     font-family: "Microsoft YaHei";
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+#musiclist .item .icon span{
+    margin-right: 5%;
 }
 #musiclist .item p{
     padding: 0.9vh 1.6vw 3.2vh 1.6vw;
@@ -126,9 +136,8 @@
     display: -webkit-box;
     -webkit-line-clamp:2;
     -webkit-box-orient: vertical;
-
-
 }
+
 #musiclist img.auto{/*图片自适应：一定要使用前景图*/
     width: 100%;
     height: auto;

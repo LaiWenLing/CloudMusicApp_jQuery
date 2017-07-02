@@ -79,19 +79,55 @@
             $template.appendTo(songList);
 
         }
-        //单位换算。将超过一万的数字换成以万为单位
-        function unitCon(n){
-            if(n-10000>=0){
-                var num = Math.floor(n/10000);
-                return n=num+"万";
-            }else{
-                return n;
-            }
-        }
+
 
     });
 
+    //下拉滚动条加载新数据
+    window.onscroll = function(){
 
+        //滚动条高度：
+        var _scroll = document.documentElement.scrollTop||document.body.scrollTop;
+        //浏览器高度：
+        var windowHeight = document.documentElement.clientHeight;
+
+        //当滚动条移动到网页底部时，加载数据
+        if(_scroll+windowHeight >= document.documentElement.offsetHeight){
+            getPlayLists(12,function(data){//匿名函数，名字没有意义，所以使用匿名函数
+                var songList = $("#musiclist");
+
+                var template = $('.m_template').html();//因为html太长，所以写在home.html页面中，并且写成一个模板，display:none.
+
+                //【json数据不能直接放进html，必须拼成html字符串才能放进去】
+
+                for(var i=0;i<data.length;i++){
+
+                    /* $(template)//链式编程，需要在每次查找之后加上end()结束
+                     .find(".item div").html(data[i].playCount).end() //end()代表这次查找结束
+                     .find(".item img").attr()
+                     .appendTo(songList);*/
+
+                    var $template = $(template);
+                    $template.find("a").attr("href","#/detail?id="+data[i].id);
+                    $template.find("span").html(unitCon(data[i].playCount));
+                    $template.find("img").attr("src",data[i].coverImgUrl);
+                    $template.find("p").html(data[i].name);
+                    $template.appendTo(songList);
+                }
+            });
+        }
+    };
+
+
+    //单位换算。将超过一万的数字换成以万为单位
+    function unitCon(n){
+        if(n-10000>=0){
+            var num = Math.floor(n/10000);
+            return n=num+"万";
+        }else{
+            return n;
+        }
+    }
     //-----------------------------------------------------------------
 
 

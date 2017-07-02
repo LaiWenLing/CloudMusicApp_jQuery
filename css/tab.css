@@ -4,10 +4,16 @@
     flex: 0 0 100%;
 
 }
-.fix{
+#fix{
     display: flex;
     flex: 1;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 17vh;
+    z-index: 1000000;
 }
 .header{
     display: flex;
@@ -38,12 +44,22 @@
     text-align: center;
     line-height: 5vh;
     color:  #8a8a8a;
-    font-size: 1.6vw;
+    font-size: 3vw;
     font-family: "Microsoft YaHei";
+    border-bottom: 3px solid #feffff;
     /*font-weight: bold;*/
     /*border-bottom: 2px solid #fff;*/
 }
+
 .nav .active{
     color: #d2453c;
+    border-bottom: 3px solid #d2453c;
 }
-
+.nav .normal{
+    color:  #8a8a8a;
+    border-bottom: 3px solid #feffff;
+}
+.tabcontainer{
+    margin-top: 17vh;
+    height: 100%;
+}

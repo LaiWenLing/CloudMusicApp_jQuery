@@ -1,0 +1,68 @@
+.charts_wrap{
+    display: flex;
+    width: 100vw;
+    flex-flow: column nowrap;
+}
+.charts_wrap .charts_title{
+    display: flex;
+    height: 4vh;
+    padding: 3vh 0 2vh 0;
+ }
+.charts_title span{
+    width: 1vw;
+    height: 100%;
+    background: #d2453c;
+}
+.charts_title h2{
+    margin-left: 2vw;
+    font-size: 4.5vw;
+
+}
+
+#charts_list{
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+}
+#charts_list .item{
+    width: 100vw;
+    flex-flow: row nowrap;
+    height: 20vh;
+    display: flex;
+    margin-bottom: 0.4vh;
+    border-bottom: 1px solid #dfe0e2;
+}
+#charts_list .item>a{
+    flex: 0 0 30%;
+    height: 100%;
+    margin-right: 3%;
+}
+#charts_list .item>a img{
+    height: 100%;
+    width: auto;
+}
+#charts_list .item .charts_info{
+    flex: 0 0 60%;
+    flex-flow: column nowrap;
+    padding-top: 1.8vh;
+
+}
+.charts_info li{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+
+}
+.charts_info li a{
+    width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    font-size: 4vw;
+    color: #666769;
+    font-family: Arial, "Microsoft YaHei";
+}

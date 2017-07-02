@@ -12,3 +12,9 @@ a{
 ul,li{
     list-style: none;
 }
+#global{
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    bottom: 0;
+}
